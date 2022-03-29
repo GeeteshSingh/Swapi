@@ -13,7 +13,7 @@ export function InfinitePeople() {
     useInfiniteQuery(
       "sw-people",
       ({ pageParam = initialUrl }) => {
-        fetchUrl(pageParam);
+        return fetchUrl(pageParam);
       },
       {
         getNextPageParam: (lastPage) => lastPage.next || undefined,
